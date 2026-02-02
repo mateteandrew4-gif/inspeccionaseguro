@@ -1,3 +1,6 @@
+const fetch = require('node-fetch');
+const FormData = require('form-data');
+
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
@@ -20,7 +23,6 @@ export default async function handler(req, res) {
     const buffer = Buffer.from(base64Data, 'base64');
 
     // Create form data for Telegram
-    const FormData = (await import('form-data')).default;
     const form = new FormData();
     form.append('chat_id', TG_CHAT_ID);
     form.append('caption', caption);
@@ -42,10 +44,9 @@ export default async function handler(req, res) {
     if (data.ok) {
       return res.status(200).json({ success: true });
     } else {
-      return res.status(500).json({ error: 'Failed to send receipt' });
+      return res.status(500).json({ error: 'Failed to send receipt', details: data });
     }
   } catch (error) {
-    console.error('Error:', error);
-    return res.status(500).json({ error: 'Server error' });
+    return res.status(500).json({ error: 'Server error', details: error.message });
   }
 }
